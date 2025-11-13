@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Card from "../components/Card";
 import "./Home.css";
 import {
   FaShieldAlt,
@@ -9,6 +8,10 @@ import {
   FaLock,
   FaChartBar,
   FaBolt,
+  FaSearch,
+  FaClipboardList,
+  FaTasks,
+  FaRobot,
 } from "react-icons/fa";
 
 function Home() {
@@ -26,7 +29,6 @@ function Home() {
             seamlessly, and tracking your admission journey.
           </p>
           <div className="hero-buttons">
-            {/* ✅ Updated Buttons */}
             <Link to="/register" className="btn-primary">
               Get Started
             </Link>
@@ -48,26 +50,60 @@ function Home() {
         </p>
 
         <div className="features-grid">
-          <Card
-            title="Explore Programs"
-            description="Browse thousands of top programs and find the perfect match for your goals."
-            buttonText="View Programs"
-          />
-          <Card
-            title="How to Apply"
-            description="A simple, guided step-by-step application process for every student."
-            buttonText="Learn More"
-          />
-          <Card
-            title="Smart Application Tracker"
-            description="Monitor your application status and receive real-time updates."
-            buttonText="Go to Dashboard"
-          />
-          <Card
-            title="Chat with UniBot 🤖"
-            description="Need help? Chat instantly with our AI assistant for personalized guidance."
-            buttonText="Start Chat"
-          />
+          <div className="feature-card">
+            <FaSearch className="feature-icon" />
+            <h3>
+              <span className="highlight-text">Explore</span> Programs
+            </h3>
+            <p>
+              Browse thousands of top programs and find the perfect match for
+              your goals.
+            </p>
+            <Link to="/programs" className="btn-primary">
+              View Programs
+            </Link>
+          </div>
+
+          <div className="feature-card">
+            <FaClipboardList className="feature-icon" />
+            <h3>
+              <span className="highlight-text">How to</span> Apply
+            </h3>
+            <p>
+              A simple, guided step-by-step application process for every
+              student.
+            </p>
+            <Link to="/how-to-apply" className="btn-secondary">
+              Learn More
+            </Link>
+          </div>
+
+          <div className="feature-card">
+            <FaTasks className="feature-icon" />
+            <h3>
+              <span className="highlight-text">Smart</span> Application Tracker
+            </h3>
+            <p>
+              Monitor your application status and receive real-time updates.
+            </p>
+            <Link to="/register" className="btn-primary">
+              Go to Dashboard
+            </Link>
+          </div>
+
+          <div className="feature-card">
+            <FaRobot className="feature-icon" />
+            <h3>
+              <span className="highlight-text">Chat with</span> UniBot 🤖
+            </h3>
+            <p>
+              Need help? Chat instantly with our AI assistant for personalized
+              guidance.
+            </p>
+            <Link to="/chat" className="btn-secondary">
+              Start Chat
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -141,24 +177,27 @@ function Home() {
         <div className="testimonials">
           <div className="testimonial">
             <p>
-              “UniQuest made applying to international universities effortless.
-              I got admitted to my dream college!”
+              "UniQuest made applying to international universities effortless.
+              I got admitted to my dream college!"
             </p>
-            <h4>— Sarah Johnson, Canada</h4>
+            <h4>— Sarah Johnson</h4>
+            <span>Canada</span>
           </div>
           <div className="testimonial">
             <p>
-              “I loved the document upload and tracking system. Everything was
-              so smooth and transparent.”
+              "I loved the document upload and tracking system. Everything was
+              so smooth and transparent."
             </p>
-            <h4>— Rahul Mehta, India</h4>
+            <h4>— Rahul Mehta</h4>
+            <span>India</span>
           </div>
           <div className="testimonial">
             <p>
-              “Thanks to UniQuest’s AI chat support, I got help instantly during
-              my application process.”
+              "Thanks to UniQuest's AI chat support, I got help instantly during
+              my application process."
             </p>
-            <h4>— Maria Lopez, Spain</h4>
+            <h4>— Maria Lopez</h4>
+            <span>Spain</span>
           </div>
         </div>
       </section>
