@@ -44,4 +44,72 @@ It provides a seamless experience for exploring programs, applying to universiti
 
 ---
 
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js installed on your system
+- npm or yarn package manager
+
+### Installation
+
+#### 1️⃣ Install Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+#### 2️⃣ Install Backend
+```bash
+cd backend
+npm install
+npm start
+```
+
+## ✨ Features Breakdown
+
+### 👨‍🎓 Students
+- **Program Search** - Explore universities and discover programs
+- **AI Recommendations** - Get personalized program suggestions
+- **Apply to Programs** - Streamlined application process
+- **Upload Documents** - Easy document management
+- **Track Status** - Monitor application progress in real-time
+- **View Deadlines** - Never miss an important date
+
+### 🏫 Universities
+- **Manage Programs** - Add, edit, and organize program offerings
+- **View Applicants** - Review and manage student applications
+- **Edit Program Details** - Keep program information up-to-date
+
+### 🛠 Admin
+- **User Management** - Oversee students and university accounts
+- **University Management** - Manage institutional partnerships
+- **Analytics Dashboard** - Track platform metrics and insights
+- **Notifications** - Send updates and announcements
+- **Platform Settings** - Configure system-wide preferences
+
+## 🤝 Contributing
+
+Contributions are always welcome!
+
+Follow these steps:
+
+1. Fork the project
+2. Create a new feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Submit a Pull Request
+
+## 📜 License
+
+This project is licensed under the MIT License.
+
+## ⭐ Support the Project
+
+If you like this project, please ⭐ star the repository — it really helps!
+
+---
+
+Made with ❤️ by Sagnik Bose
+
 
