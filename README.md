@@ -1,5 +1,5 @@
 # 🎓 **UniQuest – Smart University Admissions Platform**  
-### *Your seamless AI-powered global admissions portal*
+### *Your Smart, Seamless University Admission Platform*
 
 ---
 
