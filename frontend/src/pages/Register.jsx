@@ -48,7 +48,7 @@ function Register() {
       setErrors({});
       try {
         const response = await fetch(
-          "https://uni-backend-wqfy.onrender.com/api/auth/register",
+          "https://uniquest-backend-gb3k.onrender.com/api/auth/register",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

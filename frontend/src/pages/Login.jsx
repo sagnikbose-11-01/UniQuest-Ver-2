@@ -40,7 +40,7 @@ function Login() {
       setErrors({});
       try {
         const response = await fetch(
-          "https://uni-backend-wqfy.onrender.com/api/auth/login",
+          "https://uniquest-backend-gb3k.onrender.com/api/auth/login",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

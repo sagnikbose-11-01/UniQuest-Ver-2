@@ -4,9 +4,9 @@ const { Pool } = require('pg');
 // configure your Postgres connection
 const pool = new Pool({
   user: 'uniquestdb_user',
-  host: 'dpg-d49nbu95pdvs73do70hg-a',
-  database: 'uniquestdb',
-  password: 'vnAogNDzl1ncCo29w8xElhh16y9UzzOB',
+  host: 'dpg-d4aiqgpe2q1c73b0r920-a',
+  database: 'uniquestdb_3w2y',
+  password: 'QlHla4x8k31MOAupalY8JEAY872Rpnil',
   port: 5432,
 });
 
