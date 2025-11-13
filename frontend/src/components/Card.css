@@ -1,0 +1,19 @@
+.card {
+  background-color: #1e1e1e;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin: 1rem 0;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #9b5de5; /* purple accent */
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  color: #ccc;
+  margin-bottom: 1rem;
+}

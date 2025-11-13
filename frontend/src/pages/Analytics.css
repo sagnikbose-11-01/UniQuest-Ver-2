@@ -1,0 +1,146 @@
+.analytics-page {
+  background: #0b132b;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.analytics-header {
+  margin-bottom: 1.5rem;
+}
+
+.analytics-header h1 {
+  font-size: 1.8rem;
+}
+
+.analytics-header p {
+  color: #aaa;
+}
+
+/* GRID LAYOUT */
+.analytics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 1.5rem;
+}
+
+/* CHART CARDS */
+.chart-card {
+  background: #111c33;
+  border-radius: 1rem;
+  padding: 1.2rem 1.5rem;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.1);
+}
+
+.chart-card h3 {
+  color: #00e5ff;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.chart-card.span-2 {
+  grid-column: span 2;
+}
+
+/* REGION SECTION */
+.region-row {
+  margin-bottom: 1rem;
+}
+
+.region-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.progress-bar {
+  background: #1f2a48;
+  height: 6px;
+  border-radius: 5px;
+  margin: 0.3rem 0;
+}
+
+.progress {
+  background: #00e5ff;
+  height: 100%;
+  border-radius: 5px;
+}
+
+/* TOP PROGRAMS */
+.program-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+}
+
+.rank {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00e5ff;
+  font-weight: 600;
+}
+
+.program-info h4 {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.program-info p {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.percent {
+  font-weight: 600;
+}
+
+.rank-1 {
+  color: #00e5ff;
+}
+.rank-2 {
+  color: #3b82f6;
+}
+.rank-3 {
+  color: #10b981;
+}
+.rank-4 {
+  color: #f59e0b;
+}
+.rank-5 {
+  color: #8b5cf6;
+}
+
+/* METRICS */
+.metric-card {
+  background: #111c33;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.metric-card h4 {
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.metric-card h2 {
+  color: #00e5ff;
+  font-size: 1.8rem;
+  margin: 0.4rem 0;
+}
+
+.metric-card:nth-child(10) h2 {
+  color: #a855f7;
+}
+
+.metric-card p {
+  font-size: 0.8rem;
+  color: #aaa;
+}

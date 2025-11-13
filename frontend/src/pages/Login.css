@@ -1,0 +1,211 @@
+/* ==============================
+   LOGIN PAGE
+   ============================== */
+.login-container {
+  max-width: 400px;
+  margin: 5rem auto;
+  padding: 2.5rem 2rem;
+  border-radius: 1rem;
+  background: linear-gradient(145deg, #141b2f, #0f172a);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.08);
+  color: #fff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.login-container:hover {
+  box-shadow: 0 0 35px rgba(0, 229, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+/* ==============================
+   HEADER
+   ============================== */
+.login-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00e5ff, #7b2ff7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+}
+
+/* ==============================
+   FORM STYLING
+   ============================== */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.input-label {
+  font-weight: 600;
+  color: #cfd8dc;
+  font-size: 0.9rem;
+}
+
+/* INPUT FIELD */
+.login-form input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  border-radius: 0.6rem;
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+  border-color: #00e5ff;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+  outline: none;
+  background: rgba(0, 229, 255, 0.08);
+}
+
+/* PASSWORD INPUT WITH TOGGLE */
+.password-input {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.6rem 0.4rem 0.8rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.password-input:focus-within {
+  border: 1px solid #00e5ff;
+  box-shadow: 0 0 12px rgba(0, 229, 255, 0.6);
+  background: rgba(0, 229, 255, 0.08);
+  animation: neonPulse 1.5s infinite alternate;
+}
+
+.password-input input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  font-family: inherit;
+  padding: 0.7rem 0;
+}
+
+.eye-icon {
+  flex-shrink: 0;
+  color: #00e5ff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+
+.eye-icon:hover {
+  color: #fff;
+  background: rgba(0, 229, 255, 0.15);
+  transform: scale(1.1);
+}
+
+/* ==============================
+   GLOW ANIMATION
+   ============================== */
+@keyframes neonPulse {
+  from {
+    box-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
+  }
+  to {
+    box-shadow: 0 0 16px rgba(0, 229, 255, 0.8);
+  }
+}
+
+/* ==============================
+   BUTTON
+   ============================== */
+button,
+.login-form button {
+  background: linear-gradient(90deg, #00e5ff, #7b2ff7);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.6rem;
+  padding: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+button:hover,
+.login-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
+}
+
+/* ==============================
+   ERROR
+   ============================== */
+.error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: -0.4rem;
+  margin-bottom: 0.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==============================
+   FOOTER LINK
+   ============================== */
+.login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #b5b5b5;
+  font-size: 0.9rem;
+}
+
+.login-footer a {
+  color: #00e5ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.login-footer a:hover {
+  color: #7b2ff7;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 2rem 1.2rem;
+  }
+
+  .login-container h1 {
+    font-size: 1.7rem;
+  }
+}

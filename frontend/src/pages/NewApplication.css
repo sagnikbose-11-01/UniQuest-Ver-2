@@ -1,0 +1,209 @@
+.application-container {
+  padding: 2rem;
+  color: #fff;
+  background: #0b132b;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+.application-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.application-header h1 {
+  font-size: 2rem;
+  background: linear-gradient(90deg, #00e5ff, #7b2ff7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.step {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  color: #aaa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s ease;
+}
+
+.step.active {
+  border-color: #00e5ff;
+  color: #00e5ff;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.application-form {
+  max-width: 750px;
+  margin: 0 auto;
+  background: #111c33;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+}
+
+.application-form section {
+  margin-bottom: 2rem;
+}
+
+.application-form h2 {
+  color: #00e5ff;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+  padding-bottom: 0.5rem;
+}
+
+.application-form input,
+.application-form select,
+.application-form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
+}
+
+.application-form input:focus,
+.application-form select:focus,
+.application-form textarea:focus {
+  border-color: #00e5ff;
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+}
+
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+.file-upload label {
+  color: #00e5ff;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.file-upload ul {
+  list-style: none;
+  padding: 0;
+}
+
+.file-upload li {
+  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 0.4rem;
+  padding: 0.4rem;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.declaration {
+  color: #ccc;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.form-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-btn,
+.submit-btn,
+.cancel-btn {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1.4rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.nav-btn {
+  background: rgba(0, 229, 255, 0.15);
+  color: #00e5ff;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 229, 255, 0.25);
+}
+
+.nav-btn.next {
+  background: linear-gradient(90deg, #00e5ff, #7b2ff7);
+  color: #fff;
+}
+
+.submit-btn {
+  background: linear-gradient(90deg, #00e5ff, #7b2ff7);
+  color: #fff;
+}
+
+.submit-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+}
+
+.cancel-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #bbb;
+}
+
+.cancel-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* -------------------------
+   DECLARATION SECTION (FIXED)
+-------------------------- */
+.declaration {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.8rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(0, 229, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.declaration input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #00e5ff;
+  cursor: pointer;
+  flex-shrink: 0;
+  border-radius: 4px;
+  border: 2px solid rgba(0, 229, 255, 0.3);
+  transition: 0.2s ease;
+}
+
+.declaration input[type="checkbox"]:hover {
+  box-shadow: 0 0 8px rgba(0, 229, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.declaration span {
+  color: #d3d3d3;
+  max-width: 85%;
+  display: inline-block;
+}

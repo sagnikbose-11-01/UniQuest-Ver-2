@@ -1,0 +1,10 @@
+.app {
+  background-color: #121212;
+  min-height: 100vh;
+  color: white;
+}
+
+.main-content {
+  padding-top: 4rem; /* navbar height */
+  padding-bottom: 2rem;
+}
