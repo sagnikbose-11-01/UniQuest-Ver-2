@@ -40,7 +40,7 @@ function Navbar() {
           <Link to="/how-to-apply">{t("how_to_apply")}</Link>
 
           {/* 🆕 New Contact Link */}
-          <Link to="/contact">{t("Contact") || "Contact"}</Link>
+          <Link to="/contact">{t("contact")}</Link>
 
           {/* LANGUAGE SWITCHER */}
           <div className="language-dropdown">
