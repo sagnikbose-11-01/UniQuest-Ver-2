@@ -44,22 +44,34 @@ It provides a seamless experience for exploring programs, applying to universiti
 
 ---
 
+
+## 🌐 Live Demo
+
+Check out the live demo: [University Application Platform](https://uniquest-frontend.onrender.com/)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
 - Node.js installed on your system
 - npm or yarn package manager
+- Git
 
 ### Installation
 
-#### 1️⃣ Install Frontend
+#### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/sagnikbose-11-01/UniQuest-Ver-2.git
+cd university-application-platform
+```
+
+#### 2️⃣ Install Frontend
 ```bash
 cd frontend
 npm install
 npm run dev
 ```
 
-#### 2️⃣ Install Backend
+#### 3️⃣ Install Backend
 ```bash
 cd backend
 npm install
