@@ -47,7 +47,7 @@ It provides a seamless experience for exploring programs, applying to universiti
 
 ## 🌐 Live Demo
 
-Check out the live demo: [University Application Platform](https://uniquest-frontend.onrender.com/)
+Check out the live demo: [University Admission Platform](https://uniquest-frontend.onrender.com/)
 
 ## 🚀 Getting Started
 
@@ -61,7 +61,7 @@ Check out the live demo: [University Application Platform](https://uniquest-fron
 #### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/sagnikbose-11-01/UniQuest-Ver-2.git
-cd university-application-platform
+cd university-admission-platform
 ```
 
 #### 2️⃣ Install Frontend
