@@ -1,11 +1,81 @@
 {
   "home": "Inicio",
   "programs": "Programas",
-  "how_to_apply": "Cómo aplicar",
-  "login": "Iniciar sesión",
+  "how_to_apply": "Cómo Aplicar",
+  "contact": "Contacto",
+  "login": "Iniciar Sesión",
   "register": "Registrarse",
-  "welcome": "Bienvenido a UniQuest",
-  "tagline": "Tu portal perfecto para admisiones universitarias",
-  "contact": "Contacto"
-}
 
+  "hero_title": "Descubre Tu <highlight>Universidad Ideal</highlight> con UniQuest",
+  "hero_subtitle": "Tu plataforma para explorar programas, aplicar fácilmente y seguir tu proceso de admisión.",
+  "get_started": "Comenzar",
+  "explore_programs": "Explorar Programas",
+
+  "why_choose_title": "¿Por Qué Elegir UniQuest?",
+  "why_choose_sub": "Simplificamos y aceleramos las admisiones universitarias internacionales.",
+
+  "feature_explore_title": "<highlight>Explorar</highlight> Programas",
+  "feature_explore_desc": "Explora miles de programas y encuentra el ideal para ti.",
+  "view_programs": "Ver Programas",
+
+  "feature_apply_title": "<highlight>Cómo</highlight> Aplicar",
+  "feature_apply_desc": "Un proceso simple y guiado paso a paso.",
+  "learn_more": "Aprender Más",
+
+  "feature_tracker_title": "<highlight>Seguimiento Inteligente</highlight> de Solicitudes",
+  "feature_tracker_desc": "Monitorea tu estado de aplicación en tiempo real.",
+  "go_to_dashboard": "Ir al Panel",
+
+  "feature_unibot_title": "<highlight>Chatea con</highlight> UniBot",
+  "feature_unibot_desc": "¿Necesitas ayuda? Chatea con nuestro asistente IA.",
+  "start_chat": "Iniciar Chat",
+
+  "powerful_features": "Funciones Poderosas",
+  "powerful_features_sub": "Tecnología e inteligencia para simplificar tu experiencia.",
+
+  "secure_portal_title": "Portal Seguro",
+  "secure_portal_desc": "Envíos cifrados y almacenamiento seguro de documentos.",
+
+  "multi_role_title": "Acceso Multi-Rol",
+  "multi_role_desc": "Experiencia fluida para estudiantes, universidades y administradores.",
+
+  "ai_recommendation_title": "Recomendación IA",
+  "ai_recommendation_desc": "Obtén sugerencias personalizadas para tus estudios.",
+
+  "fraud_detection_title": "Detección de Fraudes",
+  "fraud_detection_desc": "Sistema avanzado para garantizar la integridad de solicitudes.",
+
+  "analytics_title": "Panel Analítico",
+  "analytics_desc": "Análisis e información en tiempo real.",
+
+  "fast_processing_title": "Procesamiento Rápido",
+  "fast_processing_desc": "Actualizaciones instantáneas y notificaciones.",
+
+  "testimonials_title": "Lo Que Dicen Nuestros Estudiantes",
+
+  "testimonial_1_text": "\"UniQuest hizo que aplicar fuera muy fácil. ¡Entré a mi universidad soñada!\"",
+  "testimonial_1_name": "Sarah Johnson",
+  "testimonial_1_country": "Canadá",
+
+  "testimonial_2_text": "\"Me encantó el sistema de carga y seguimiento de documentos. Muy fluido y transparente.\"",
+  "testimonial_2_name": "Rahul Mehta",
+  "testimonial_2_country": "India",
+
+  "testimonial_3_text": "\"Gracias al soporte IA, recibí ayuda instantánea durante el proceso.\"",
+  "testimonial_3_name": "Maria Lopez",
+  "testimonial_3_country": "España",
+
+  "cta_title": "Comienza Tu Camino de Admisión Hoy 🚀",
+  "cta_sub": "Miles de estudiantes aplican con UniQuest.",
+  "join_now": "Únete Ahora",
+
+  "footer_about": "Ayudando a estudiantes de todo el mundo a aplicar con éxito.",
+  "quick_links": "Enlaces Rápidos",
+  "contact_us": "Contáctanos",
+  "email": "Correo",
+  "phone": "Teléfono",
+  "address": "Dirección",
+  "footer_address_value": "Kolkata, India",
+  "rights": "© 2025 UniQuest. Todos los Derechos Reservados.",
+  "made_with_love": "Hecho con ❤️ por el Equipo UniQuest"
+}

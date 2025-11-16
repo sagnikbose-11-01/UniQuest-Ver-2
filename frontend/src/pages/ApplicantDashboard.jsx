@@ -22,8 +22,7 @@ function ApplicantDashboard() {
 
   // ✅ Get logged-in applicant info
   const storedUser = JSON.parse(localStorage.getItem("user"));
-  const applicantName =
-    storedUser?.fullName || storedUser?.name || "Applicant";
+  const applicantName = storedUser?.fullName || storedUser?.name || "Applicant";
 
   // ✅ File Upload Handler
   const handleFileUpload = (e) => {
@@ -46,9 +45,11 @@ function ApplicantDashboard() {
           <a href="#" className="active">
             <FaTachometerAlt /> Dashboard
           </a>
-          <a href="#">
+          <button
+            onClick={() => navigate("/dashboard/applicant/my-applications")}
+          >
             <FaFileAlt /> My Applications
-          </a>
+          </button>
           <button
             onClick={() => navigate("/dashboard/applicant/new-application")}
           >

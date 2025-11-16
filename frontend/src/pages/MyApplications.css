@@ -1,0 +1,177 @@
+/* =============================== */
+/*       MY APPLICATIONS PAGE      */
+/* =============================== */
+
+.my-applications-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+/* Page Title */
+.my-app-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #00e5ff;
+  text-shadow: 0px 0px 10px rgba(0, 229, 255, 0.6);
+  text-align: center;
+}
+
+/* Application Grid */
+.applications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 2rem;
+}
+
+/* Application Card */
+.application-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.application-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 35px rgba(0, 229, 255, 0.25);
+  border-color: #00e5ff;
+}
+
+/* University Title */
+.application-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  color: #00e5ff;
+}
+
+/* Application Info */
+.app-details p {
+  font-size: 1rem;
+  margin: 0.4rem 0;
+  color: #d6d6d6;
+}
+
+.app-details strong {
+  color: #fff;
+}
+
+/* STATUS BADGE */
+.status-badge {
+  display: inline-block;
+  background: linear-gradient(90deg, #00e5ff, #0088ff);
+  padding: 0.5rem 1.2rem;
+  border-radius: 2rem;
+  color: black;
+  font-weight: 600;
+  margin: 1rem 0 1.5rem 0;
+  font-size: 0.95rem;
+  box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+/* =============================== */
+/*           TIMELINE              */
+/* =============================== */
+
+/* =============================== */
+/*           NEW TIMELINE          */
+/*   (Matches style from picture)  */
+/* =============================== */
+
+/* =============================== */
+/*           TIMELINE              */
+/* =============================== */
+
+.timeline {
+  margin-top: 1.5rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+/* Dotted vertical line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px; /* aligns perfectly with dot center */
+  top: 0;
+  width: 2px;
+  height: 100%;
+  border-left: 2px dotted rgba(255, 255, 255, 0.3);
+}
+
+/* A single step */
+.timeline-step {
+  position: relative;
+  margin: 2.2rem 0;
+}
+
+/* The circle (dot) */
+.timeline-dot {
+  position: absolute;
+  left: 12px; /* aligns dot center to dotted line */
+  top: 0.2rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+}
+
+/* Colors */
+.timeline-dot.green {
+  background: #00e676;
+  box-shadow: 0 0 10px #00e676;
+}
+
+.timeline-dot.yellow {
+  background: #ffeb3b;
+  box-shadow: 0 0 10px #ffeb3b;
+}
+
+.timeline-dot.red {
+  background: #e53935;
+  box-shadow: 0 0 10px #e53935;
+}
+
+/* Content */
+.timeline-content {
+  margin-left: 3rem; /* ensure text stays aligned */
+}
+
+.timeline-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.timeline-date {
+  font-size: 0.85rem;
+  color: #bdbdbd;
+  margin-top: 4px;
+}
+
+
+/* =============================== */
+/*        RESPONSIVE DESIGN        */
+/* =============================== */
+
+@media (max-width: 768px) {
+  .applications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .application-card {
+    padding: 1.5rem;
+  }
+
+  .application-card h2 {
+    font-size: 1.5rem;
+  }
+}

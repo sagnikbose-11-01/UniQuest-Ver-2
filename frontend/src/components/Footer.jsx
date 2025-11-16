@@ -1,40 +1,41 @@
 import React from "react";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 import "./Footer.css";
 
 function Footer() {
+  const { t } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="footer-container">
-        {/* Logo and About Section */}
+        
+        {/* About */}
         <div className="footer-section about">
           <h2 className="footer-logo">🎓 UniQuest</h2>
-          <p>
-            Empowering students worldwide to explore programs, apply with ease, 
-            and achieve their academic dreams — all in one place.
-          </p>
+          <p>{t("footer_about")}</p>
         </div>
 
         {/* Quick Links */}
         <div className="footer-section links">
-          <h3>Quick Links</h3>
+          <h3>{t("quick_links")}</h3>
           <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/programs">Programs</a></li>
-            <li><a href="/how-to-apply">How to Apply</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/">{t("home")}</a></li>
+            <li><a href="/programs">{t("programs")}</a></li>
+            <li><a href="/how-to-apply">{t("how_to_apply")}</a></li>
+            <li><a href="/contact">{t("contact")}</a></li>
+            <li><a href="/login">{t("login")}</a></li>
           </ul>
         </div>
 
         {/* Contact Info */}
         <div className="footer-section contact">
-          <h3>Contact Us</h3>
-          <p>Email: <a href="mailto:support@uniquest.com">support@uniquest.com</a></p>
-          <p>Phone: +91 98765 43210</p>
-          <p>Address: Kolkata, India</p>
+          <h3>{t("contact_us")}</h3>
 
-          {/* Social Icons */}
+          <p>{t("email")}: <a href="mailto:support@uniquest.com">support@uniquest.com</a></p>
+          <p>{t("phone")}: +91 98765 43210</p>
+          <p>{t("address")}: {t("footer_address_value")}</p>
+
           <div className="social-icons">
             <a href="#"><FaFacebookF /></a>
             <a href="#"><FaTwitter /></a>
@@ -44,10 +45,10 @@ function Footer() {
         </div>
       </div>
 
-      {/* Bottom Bar */}
+      {/* Footer Bottom */}
       <div className="footer-bottom">
-        <p>© 2025 UniQuest. All Rights Reserved.</p>
-        <p>Made with ❤️ by Team UniQuest</p>
+        <p>{t("rights")}</p>
+        <p>{t("made_with_love")}</p>
       </div>
     </footer>
   );

@@ -1,6 +1,11 @@
 // pages/NewApplication.jsx
 import React, { useState } from "react";
-import { FaArrowRight, FaArrowLeft, FaPaperPlane, FaUpload } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaArrowLeft,
+  FaPaperPlane,
+  FaUpload,
+} from "react-icons/fa";
 import "./NewApplication.css";
 import { useNavigate } from "react-router-dom";
 
@@ -50,10 +55,61 @@ function NewApplication() {
   const nextStep = () => setStep((prev) => Math.min(prev + 1, 4));
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   alert("🎓 Application submitted successfully!");
+  //   navigate("/dashboard/applicant");
+  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    const applicationData = {
+      id: Date.now(), // unique ID
+      university: formData.university,
+      program: formData.program,
+      degreeType: formData.degreeType,
+      department: formData.department,
+      submittedAt: new Date().toLocaleString(),
+
+      // Initial application status
+      status: "Submitted",
+      timeline: [
+        { label: "Application Submitted", time: new Date().toLocaleString() },
+        { label: "Waiting for University Response", time: null },
+        { label: "Review in Progress", time: null },
+        { label: "Final Decision Pending", time: null },
+      ],
+    };
+
+    // Save inside localStorage
+    const existingApps =
+      JSON.parse(localStorage.getItem("uniquest_applications")) || [];
+    existingApps.push(applicationData);
+
+    localStorage.setItem("uniquest_applications", JSON.stringify(existingApps));
+
     alert("🎓 Application submitted successfully!");
-    navigate("/dashboard/applicant");
+    // Save submitted application in localStorage
+    const storedApplications =
+      JSON.parse(localStorage.getItem("applications")) || [];
+
+    const newApp = {
+      id: Date.now(),
+      university: formData.university,
+      program: formData.program,
+      degreeType: formData.degreeType,
+      department: formData.department,
+      status: "Pending", // default status
+      submittedAt: new Date().toISOString(),
+    };
+
+    localStorage.setItem(
+      "applications",
+      JSON.stringify([...storedApplications, newApp])
+    );
+
+    navigate("/dashboard/applicant/my-applications");
   };
 
   return (
@@ -76,12 +132,41 @@ function NewApplication() {
         {step === 1 && (
           <section>
             <h2>🎓 Basic Applicant Information</h2>
-            <input name="fullName" placeholder="Full Name" onChange={handleInputChange} required />
-            <input name="email" placeholder="Email Address" type="email" onChange={handleInputChange} required />
-            <input name="phone" placeholder="Phone Number" onChange={handleInputChange} required />
-            <input name="dob" type="date" onChange={handleInputChange} required />
-            <input name="nationality" placeholder="Nationality" onChange={handleInputChange} />
-            <input name="address" placeholder="Address (City, State, Country)" onChange={handleInputChange} />
+            <input
+              name="fullName"
+              placeholder="Full Name"
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              name="email"
+              placeholder="Email Address"
+              type="email"
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              name="phone"
+              placeholder="Phone Number"
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              name="dob"
+              type="date"
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              name="nationality"
+              placeholder="Nationality"
+              onChange={handleInputChange}
+            />
+            <input
+              name="address"
+              placeholder="Address (City, State, Country)"
+              onChange={handleInputChange}
+            />
           </section>
         )}
 
@@ -89,25 +174,71 @@ function NewApplication() {
         {step === 2 && (
           <section>
             <h2>🏛️ University & Program Details</h2>
-            <input name="university" placeholder="University Name" onChange={handleInputChange} required />
-            <input name="program" placeholder="Program Name / Course Title" onChange={handleInputChange} />
+            <input
+              name="university"
+              placeholder="University Name"
+              onChange={handleInputChange}
+              required
+            />
+            <input
+              name="program"
+              placeholder="Program Name / Course Title"
+              onChange={handleInputChange}
+            />
             <select name="degreeType" onChange={handleInputChange}>
               <option value="">Select Degree Type</option>
               <option value="Bachelor">Bachelor</option>
               <option value="Master">Master</option>
               <option value="PhD">PhD</option>
             </select>
-            <input name="department" placeholder="Department / Faculty" onChange={handleInputChange} />
-            <input name="intake" placeholder="Preferred Intake / Session" onChange={handleInputChange} />
-            <input type="date" name="deadline" placeholder="Application Deadline" onChange={handleInputChange} />
+            <input
+              name="department"
+              placeholder="Department / Faculty"
+              onChange={handleInputChange}
+            />
+            <input
+              name="intake"
+              placeholder="Preferred Intake / Session"
+              onChange={handleInputChange}
+            />
+            <input
+              type="date"
+              name="deadline"
+              placeholder="Application Deadline"
+              onChange={handleInputChange}
+            />
 
             <h3>📚 Academic Background</h3>
-            <input name="qualification" placeholder="Highest Qualification" onChange={handleInputChange} />
-            <input name="institution" placeholder="Institution Name" onChange={handleInputChange} />
-            <input name="major" placeholder="Major / Stream" onChange={handleInputChange} />
-            <input name="graduationYear" placeholder="Graduation Year" onChange={handleInputChange} />
-            <input name="cgpa" placeholder="CGPA / Percentage" onChange={handleInputChange} />
-            <input name="testScores" placeholder="Standardized Test Scores (GRE, TOEFL, etc.)" onChange={handleInputChange} />
+            <input
+              name="qualification"
+              placeholder="Highest Qualification"
+              onChange={handleInputChange}
+            />
+            <input
+              name="institution"
+              placeholder="Institution Name"
+              onChange={handleInputChange}
+            />
+            <input
+              name="major"
+              placeholder="Major / Stream"
+              onChange={handleInputChange}
+            />
+            <input
+              name="graduationYear"
+              placeholder="Graduation Year"
+              onChange={handleInputChange}
+            />
+            <input
+              name="cgpa"
+              placeholder="CGPA / Percentage"
+              onChange={handleInputChange}
+            />
+            <input
+              name="testScores"
+              placeholder="Standardized Test Scores (GRE, TOEFL, etc.)"
+              onChange={handleInputChange}
+            />
           </section>
         )}
 
@@ -124,7 +255,11 @@ function NewApplication() {
             ].map(([key, label]) => (
               <div className="file-upload" key={key}>
                 <label>{label}</label>
-                <input type="file" multiple onChange={(e) => handleFileUpload(e, key)} />
+                <input
+                  type="file"
+                  multiple
+                  onChange={(e) => handleFileUpload(e, key)}
+                />
                 <ul>
                   {uploadedFiles[key]?.map((f, i) => (
                     <li key={i}>{f.name}</li>
@@ -150,11 +285,21 @@ function NewApplication() {
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
-            <textarea name="notes" placeholder="Special Requests / Notes" onChange={handleInputChange}></textarea>
+            <textarea
+              name="notes"
+              placeholder="Special Requests / Notes"
+              onChange={handleInputChange}
+            ></textarea>
 
             <label className="declaration">
-              <input type="checkbox" name="declaration" onChange={handleInputChange} required /> I confirm that all
-              information and uploaded documents are accurate and authentic.
+              <input
+                type="checkbox"
+                name="declaration"
+                onChange={handleInputChange}
+                required
+              />{" "}
+              I confirm that all information and uploaded documents are accurate
+              and authentic.
             </label>
           </section>
         )}
@@ -175,7 +320,11 @@ function NewApplication() {
               <FaPaperPlane /> Submit Application
             </button>
           )}
-          <button type="button" className="cancel-btn" onClick={() => navigate("/dashboard/applicant")}>
+          <button
+            type="button"
+            className="cancel-btn"
+            onClick={() => navigate("/dashboard/applicant")}
+          >
             Cancel
           </button>
         </div>
