@@ -16,6 +16,7 @@ import UniversityDashboard from "./pages/UniversityDashboard";
 import ApplicantDashboard from "./pages/ApplicantDashboard";
 import NewApplication from "./pages/NewApplication";
 import MyApplications from "./pages/MyApplications";
+import Profile from "./pages/Profile";
 import ProgramsCourses from "./pages/ProgramsCourses";
 import DocVerify from "./pages/DocVerify";
 import Analytics from "./pages/Analytics";
@@ -71,6 +72,8 @@ function App() {
               path="/dashboard/applicant/my-applications"
               element={<MyApplications />}
             />
+
+            <Route path="/dashboard/applicant/profile" element={<Profile />} />
 
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />

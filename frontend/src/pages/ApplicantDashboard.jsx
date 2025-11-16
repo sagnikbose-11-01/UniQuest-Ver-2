@@ -61,9 +61,9 @@ function ApplicantDashboard() {
           <a href="#">
             <FaDollarSign /> Payments
           </a>
-          <a href="#">
+          <button onClick={() => navigate("/dashboard/applicant/profile")}>
             <FaUser /> Profile
-          </a>
+          </button>
         </nav>
         <button className="logout-btn" onClick={handleLogout}>
           <FaSignOutAlt /> Logout

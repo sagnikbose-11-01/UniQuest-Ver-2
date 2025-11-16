@@ -1,0 +1,164 @@
+/* ========================== */
+/*       PROFILE PAGE         */
+/* ========================== */
+
+.profile-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}
+
+.profile-container h1 {
+  font-size: 2.4rem;
+  color: #00e5ff;
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
+}
+
+.profile-container p {
+  color: #b3b3b3;
+  margin-bottom: 2rem;
+}
+
+/* Card Layout */
+.profile-card {
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 229, 255, 0.2);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  gap: 2rem;
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.1);
+  backdrop-filter: blur(6px);
+}
+
+/* Left Side */
+/* LEFT SIDE */
+.profile-left {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Picture wrapper */
+.profile-pic-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Profile Image */
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid #00e5ff;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.6);
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+/* Upload Button */
+.upload-btn {
+  display: inline-block;
+  background: #00e5ff;
+  color: black;
+  padding: 0.7rem 1.4rem;
+  border-radius: 1rem;
+  margin-top: 0.3rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.upload-btn:hover {
+  background: #7b2ff7;
+  color: white;
+}
+
+#profilePicUpload {
+  display: none;
+}
+
+/* Name + Role */
+.profile-left h2 {
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.role {
+  color: #b3b3b3;
+  margin-top: 0.3rem;
+}
+
+/* Right Side */
+.profile-right {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-right h3 {
+  color: #00e5ff;
+  margin-bottom: 1rem;
+}
+
+.profile-right label {
+  margin-top: 1rem;
+  margin-bottom: 0.2rem;
+  color: #b3b3b3;
+}
+
+.profile-right input {
+  padding: 0.8rem;
+  border-radius: 0.6rem;
+  border: 1px solid #00e5ff55;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 1rem;
+}
+
+.save-btn,
+.password-btn {
+  margin-top: 1.5rem;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.save-btn {
+  background: linear-gradient(90deg, #00e5ff, #7b2ff7);
+  color: white;
+}
+
+.password-btn {
+  background: #7b2ff7;
+  color: white;
+}
+
+.save-btn:hover,
+.password-btn:hover {
+  transform: scale(1.04);
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .profile-card {
+    flex-direction: column;
+  }
+}
+
+
+.role-disabled {
+  background: rgba(255, 255, 255, 0.15);
+  color: #a5a5a5;
+  cursor: not-allowed;
+}
