@@ -16,51 +16,73 @@ function Profile() {
     confirmPassword: "",
   });
 
-  // Load saved data
+  // Load saved data from localStorage
   useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("user")) || {};
     setUserData({
       fullName: stored.fullName || stored.name || "Applicant",
       email: stored.email || "",
-      role: "Applicant", // Role always fixed
+      role: stored.role || "Applicant",
       profilePic: stored.profilePic || "",
     });
   }, []);
 
-  // Update form fields
+  // Handle input change for profile fields
   const handleInputChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
 
-  // Update password fields
+  // Handle password inputs
   const handlePasswordChange = (e) => {
     setPasswordData({ ...passwordData, [e.target.name]: e.target.value });
   };
 
-  // Upload profile picture
+  // Upload profile picture (persistent)
   const handleProfilePicUpload = (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
     const reader = new FileReader();
     reader.onload = () => {
-      setUserData({ ...userData, profilePic: reader.result });
+      const updatedUser = { ...userData, profilePic: reader.result };
+
+      setUserData(updatedUser);
+
+      // 🔥 Save immediately to localStorage
+      localStorage.setItem("user", JSON.stringify(updatedUser));
     };
     reader.readAsDataURL(file);
   };
 
-  // Save profile changes
+  // Remove/Reset profile picture
+  const handleRemovePicture = () => {
+    const updatedUser = {
+      ...userData,
+      profilePic: "",
+    };
+
+    setUserData(updatedUser);
+
+    // Save updated data
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+  };
+
+  // Save changes
   const handleSave = () => {
-    localStorage.setItem("user", JSON.stringify(userData));
+    const stored = JSON.parse(localStorage.getItem("user")) || {};
+    const updatedUser = { ...stored, ...userData };
+
+    localStorage.setItem("user", JSON.stringify(updatedUser));
     alert("Profile updated successfully!");
   };
 
-  // Update password
+  // Update password logic
   const updatePassword = () => {
     if (passwordData.newPassword !== passwordData.confirmPassword) {
       alert("New passwords do not match!");
       return;
     }
+
     alert("Password updated successfully!");
     setPasswordData({
       currentPassword: "",
@@ -74,10 +96,11 @@ function Profile() {
       <h1>👤 Profile Settings</h1>
       <p>Manage your personal information and account security</p>
 
-      {/* Profile Card */}
       <div className="profile-card">
+        {/* LEFT SECTION */}
         <div className="profile-left">
           <div className="profile-pic-wrapper">
+
             <img
               src={
                 userData.profilePic ||
@@ -94,16 +117,24 @@ function Profile() {
               onChange={handleProfilePicUpload}
             />
 
-            <label htmlFor="profilePicUpload" className="upload-btn">
-              Upload Photo
-            </label>
+            <div className="pic-buttons">
+              <label htmlFor="profilePicUpload" className="upload-btn">
+                Upload Photo
+              </label>
+
+              {userData.profilePic && (
+                <button className="remove-btn" onClick={handleRemovePicture}>
+                  Remove Photo
+                </button>
+              )}
+            </div>
           </div>
 
           <h2>{userData.fullName}</h2>
           <p className="role">{userData.role}</p>
         </div>
 
-        {/* Profile Form */}
+        {/* RIGHT SECTION — FORM */}
         <div className="profile-right">
           <h3>Personal Information</h3>
 

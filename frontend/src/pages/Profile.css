@@ -162,3 +162,27 @@
   color: #a5a5a5;
   cursor: not-allowed;
 }
+
+
+.pic-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.remove-btn {
+  background: #ff4d4d;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  border: none;
+  transition: 0.3s;
+}
+
+.remove-btn:hover {
+  background: #d93636;
+}
