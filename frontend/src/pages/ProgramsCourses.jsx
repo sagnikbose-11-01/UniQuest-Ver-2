@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { FaClock, FaDollarSign, FaUsers, FaPlus, FaTrash, FaEdit } from "react-icons/fa";
+import {
+  FaClock,
+  FaDollarSign,
+  FaUsers,
+  FaPlus,
+  FaTrash,
+  FaEdit,
+} from "react-icons/fa";
 import "./ProgramsCourses.css";
 
 function ProgramsCourses() {
@@ -7,7 +14,8 @@ function ProgramsCourses() {
     {
       id: 1,
       name: "Computer Science",
-      description: "Bachelor of Science in Computer Science with focus on modern software development and AI",
+      description:
+        "Bachelor of Science in Computer Science with focus on modern software development and AI",
       duration: "4 years",
       tuition: "$8,500/year",
       enrollment: "145/200",
@@ -18,7 +26,8 @@ function ProgramsCourses() {
     {
       id: 2,
       name: "Engineering",
-      description: "Bachelor of Engineering with specializations in Civil, Mechanical, and Electrical Engineering",
+      description:
+        "Bachelor of Engineering with specializations in Civil, Mechanical, and Electrical Engineering",
       duration: "4 years",
       tuition: "$9,000/year",
       enrollment: "98/150",
@@ -29,7 +38,8 @@ function ProgramsCourses() {
     {
       id: 3,
       name: "Business Administration",
-      description: "Master of Business Administration with focus on entrepreneurship and management",
+      description:
+        "Master of Business Administration with focus on entrepreneurship and management",
       duration: "2 years",
       tuition: "$12,000/year",
       enrollment: "52/80",
@@ -40,7 +50,8 @@ function ProgramsCourses() {
     {
       id: 4,
       name: "Medicine",
-      description: "Doctor of Medicine program with comprehensive clinical training and research opportunities",
+      description:
+        "Doctor of Medicine program with comprehensive clinical training and research opportunities",
       duration: "6 years",
       tuition: "$15,000/year",
       enrollment: "38/60",
@@ -51,6 +62,8 @@ function ProgramsCourses() {
   ]);
 
   const [showAddForm, setShowAddForm] = useState(false);
+  const [showEditForm, setShowEditForm] = useState(false);
+
   const [newProgram, setNewProgram] = useState({
     name: "",
     description: "",
@@ -60,19 +73,30 @@ function ProgramsCourses() {
     activeApplications: "",
   });
 
+  const [editProgram, setEditProgram] = useState(null);
+
   const handleChange = (e) => {
-    setNewProgram({ ...newProgram, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+
+    if (showEditForm) {
+      setEditProgram({ ...editProgram, [name]: value });
+    } else {
+      setNewProgram({ ...newProgram, [name]: value });
+    }
   };
 
   const handleAddProgram = (e) => {
     e.preventDefault();
+
     const program = {
       ...newProgram,
       id: Date.now(),
       status: "Active",
       capacity: Math.floor(Math.random() * 100),
     };
+
     setPrograms([...programs, program]);
+
     setShowAddForm(false);
     setNewProgram({
       name: "",
@@ -88,17 +112,38 @@ function ProgramsCourses() {
     setPrograms(programs.filter((p) => p.id !== id));
   };
 
+  const openEditModal = (program) => {
+    setEditProgram(program);
+    setShowEditForm(true);
+  };
+
+  const handleEditSubmit = (e) => {
+    e.preventDefault();
+
+    setPrograms(
+      programs.map((p) => (p.id === editProgram.id ? editProgram : p))
+    );
+
+    setShowEditForm(false);
+    setEditProgram(null);
+  };
+
   return (
     <div className="programs-container">
       <div className="programs-header">
         <h1>Programs & Courses</h1>
         <p>Manage your university programs and courses</p>
-        <button className="add-program-btn" onClick={() => setShowAddForm(true)}>
+        <button
+          className="add-program-btn"
+          onClick={() => setShowAddForm(true)}
+        >
           <FaPlus /> Add Program
         </button>
       </div>
 
-      {/* Add Program Modal */}
+      {/* ============================
+          ADD Program Modal
+      ============================= */}
       {showAddForm && (
         <div className="modal-overlay">
           <div className="modal">
@@ -151,8 +196,14 @@ function ProgramsCourses() {
               />
 
               <div className="modal-actions">
-                <button type="submit" className="submit-btn">Add Program</button>
-                <button type="button" className="cancel-btn" onClick={() => setShowAddForm(false)}>
+                <button type="submit" className="submit-btn">
+                  Add Program
+                </button>
+                <button
+                  type="button"
+                  className="cancel-btn"
+                  onClick={() => setShowAddForm(false)}
+                >
                   Cancel
                 </button>
               </div>
@@ -161,7 +212,80 @@ function ProgramsCourses() {
         </div>
       )}
 
-      {/* Programs Grid */}
+      {/* ============================
+          EDIT Program Modal
+      ============================= */}
+      {showEditForm && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Edit Program</h2>
+
+            <form onSubmit={handleEditSubmit}>
+              <input
+                type="text"
+                name="name"
+                value={editProgram.name}
+                onChange={handleChange}
+                required
+              />
+
+              <textarea
+                name="description"
+                value={editProgram.description}
+                onChange={handleChange}
+                required
+              />
+
+              <input
+                type="text"
+                name="duration"
+                value={editProgram.duration}
+                onChange={handleChange}
+                required
+              />
+
+              <input
+                type="text"
+                name="tuition"
+                value={editProgram.tuition}
+                onChange={handleChange}
+                required
+              />
+
+              <input
+                type="text"
+                name="enrollment"
+                value={editProgram.enrollment}
+                onChange={handleChange}
+              />
+
+              <input
+                type="number"
+                name="activeApplications"
+                value={editProgram.activeApplications}
+                onChange={handleChange}
+              />
+
+              <div className="modal-actions">
+                <button type="submit" className="submit-btn">
+                  Save Changes
+                </button>
+                <button
+                  type="button"
+                  className="cancel-btn"
+                  onClick={() => setShowEditForm(false)}
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
+      {/* ============================
+          PROGRAMS GRID
+      ============================= */}
       <div className="programs-grid">
         {programs.map((program) => (
           <div key={program.id} className="program-card">
@@ -169,31 +293,47 @@ function ProgramsCourses() {
               <h3>{program.name}</h3>
               <span className="status">{program.status}</span>
             </div>
+
             <p className="program-desc">{program.description}</p>
+
             <div className="program-details">
               <div>
-                <FaClock /> <strong>Duration</strong> <p>{program.duration}</p>
+                <FaClock /> <strong>Duration</strong>
+                <p>{program.duration}</p>
               </div>
               <div>
-                <FaDollarSign /> <strong>Tuition</strong> <p>{program.tuition}</p>
+                <FaDollarSign /> <strong>Tuition</strong>
+                <p>{program.tuition}</p>
               </div>
               <div>
-                <FaUsers /> <strong>Enrollment</strong> <p>{program.enrollment}</p>
+                <FaUsers /> <strong>Enrollment</strong>
+                <p>{program.enrollment}</p>
               </div>
             </div>
+
             <div className="progress-bar">
-              <div className="progress" style={{ width: `${program.capacity}%` }}></div>
+              <div
+                className="progress"
+                style={{ width: `${program.capacity}%` }}
+              ></div>
             </div>
+
             <div className="applications">
               <p>
-                <strong>Active Applications:</strong> {program.activeApplications}
+                <strong>Active Applications:</strong>{" "}
+                {program.activeApplications}
               </p>
             </div>
+
             <div className="program-actions">
-              <button className="edit-btn">
+              <button className="edit-btn" onClick={() => openEditModal(program)}>
                 <FaEdit /> Edit
               </button>
-              <button className="delete-btn" onClick={() => handleDelete(program.id)}>
+
+              <button
+                className="delete-btn"
+                onClick={() => handleDelete(program.id)}
+              >
                 <FaTrash /> Delete
               </button>
             </div>

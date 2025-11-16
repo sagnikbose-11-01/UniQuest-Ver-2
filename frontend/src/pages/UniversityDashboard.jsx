@@ -37,7 +37,7 @@ function UniversityDashboard() {
   const userName =
     storedUser?.fullName || storedUser?.name || "University Admin";
 
-  // ✅ Optional: Create initials for avatar
+  // ✅ Create initials
   const initials = userName
     .split(" ")
     .map((n) => n[0])
@@ -48,9 +48,10 @@ function UniversityDashboard() {
   // ✅ Logout Handler
   const handleLogout = () => {
     localStorage.removeItem("user");
-    navigate("/login"); // Redirect to login page
+    navigate("/login");
   };
 
+  // Dummy Analytics Data
   const appGrowthData = [
     { name: "0", applications: 45, accepted: 28 },
     { name: "1", applications: 52, accepted: 30 },
@@ -119,13 +120,12 @@ function UniversityDashboard() {
           </a>
         </nav>
 
-        {/* ✅ Logout Button */}
         <button className="logout-btn" onClick={handleLogout}>
           <FaSignOutAlt /> Logout
         </button>
       </aside>
 
-      {/* Main Content */}
+      {/* Main Dashboard */}
       <main className="univ-content">
         <h1>Dashboard Overview</h1>
         <p>
@@ -165,14 +165,32 @@ function UniversityDashboard() {
         <section className="quick-actions">
           <h2>Quick Actions</h2>
           <div className="action-buttons">
-            <button className="btn cyan">Review Applications</button>
+            {/* UPDATED ROUTES */}
+            <button
+              className="btn cyan"
+              onClick={() =>
+                navigate("/dashboard/university/applications")
+              }
+            >
+              Review Applications
+            </button>
+
             <button className="btn blue">Upload Results</button>
+
             <button className="btn green">Send Offers</button>
-            <button className="btn purple">Add Program</button>
+
+            <button
+              className="btn purple"
+              onClick={() =>
+                navigate("/dashboard/university/programs")
+              }
+            >
+              Add Program
+            </button>
           </div>
         </section>
 
-        {/* Charts Section */}
+        {/* Charts */}
         <div className="charts-grid">
           <div className="chart-box">
             <h3>Applications Growth</h3>
@@ -204,7 +222,7 @@ function UniversityDashboard() {
           </div>
         </div>
 
-        {/* Insights Section */}
+        {/* Insights */}
         <div className="insights-grid">
           <div className="insight-box">
             <h3>📊 AI Insights</h3>
@@ -236,7 +254,7 @@ function UniversityDashboard() {
                   label
                 >
                   {programData.map((entry, index) => (
-                    <Cell key={`cell-${index}`} fill={COLORS[index]} />
+                    <Cell key={index} fill={COLORS[index]} />
                   ))}
                 </Pie>
                 <Legend />
