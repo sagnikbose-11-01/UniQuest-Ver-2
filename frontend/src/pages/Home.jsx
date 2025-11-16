@@ -100,9 +100,12 @@ function Home() {
               Need help? Chat instantly with our AI assistant for personalized
               guidance.
             </p>
-            <Link to="/chat" className="btn-secondary">
+            <button
+              className="btn-secondary"
+              onClick={() => window.dispatchEvent(new Event("open-chatbot"))}
+            >
               Start Chat
-            </Link>
+            </button>
           </div>
         </div>
       </section>
@@ -206,7 +209,7 @@ function Home() {
       <section className="cta-section">
         <h2>Start Your Admission Journey Today 🚀</h2>
         <p>Join thousands of students applying worldwide through UniQuest.</p>
-        
+
         <Link to="/register" className="btn-cta">
           Join Now
         </Link>

@@ -9,6 +9,17 @@ function Chatbot() {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
 
+  // 👉 Required effect so Home page "Start Chat" opens the chatbot
+  useEffect(() => {
+    const openChatHandler = () => setOpen(true);
+
+    window.addEventListener("open-chatbot", openChatHandler);
+
+    return () => {
+      window.removeEventListener("open-chatbot", openChatHandler);
+    };
+  }, []);
+
   const toggleChat = () => setOpen(!open);
 
   const findFaqAnswer = (userText) => {
